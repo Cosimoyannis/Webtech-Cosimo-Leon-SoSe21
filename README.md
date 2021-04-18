@@ -1,3 +1,7 @@
-# TEST1
-# TEST1
-# TEST1
+Einkaufsliste (evtl mit Account Sharing Funktion)
+
+Wunschliste
+
+Aktien Watchlist 
+
+Notizen
