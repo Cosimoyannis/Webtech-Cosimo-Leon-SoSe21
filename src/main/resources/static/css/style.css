@@ -1,1 +1,6 @@
-
+h2 {
+    font-family:"Myriad Pro","Verdana";
+    font-size:24pt;
+    color:red;
+    opacity:0.8;
+}
