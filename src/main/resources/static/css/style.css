@@ -5,6 +5,7 @@ body {
     -webkit-transition: right 6s ease-in-out;
 }
 
+/* Container hello-world */
 div.container {
     vertical-align: middle;
     position: absolute;
@@ -19,6 +20,8 @@ div.container {
     margin: auto;
     height: auto;
 }
+
+/*
 
 div.containeryose {
     vertical-align:middle;
@@ -130,6 +133,9 @@ div.containeryellow4 {
     height:auto;
 }
 
+ */
+
+/*
 p.font {
     padding-top:40px;
     padding-bottom:10px;
@@ -160,6 +166,10 @@ p.grand2 {
     text-align:center;
 }
 
+ */
+
+/* Fonts */
+
 h2 {
     font-family:"Myriad Pro","Verdana";
     font-size:24pt;
@@ -175,6 +185,8 @@ h3 {
     color:white;
     opacity:0.8;
 }
+
+/*
 
 .hdark {
     font-family:"Myriad Pro","Verdana";
@@ -208,6 +220,11 @@ a.dark:link {
     transition:padding-right 2s , padding-left 2s;
     margin:0;
 }
+
+ */
+
+
+/* Menu Style */
 
 a.dark:hover {
     background-color:rgba(0,0,0,0.7);
@@ -292,6 +309,8 @@ a.menu:visited {
     padding-left:10px;
 }
 
+/*
+
 table.yellowmenu {
     text-align: center;
     position: relative;
@@ -315,6 +334,8 @@ table.grandmenu {
     margin-left: auto;
     margin-right: auto;
 }
+
+*/
 
 table.startmenu {
     text-align:center;
