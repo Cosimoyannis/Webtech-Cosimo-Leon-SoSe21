@@ -8,9 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HelloController {
 
-    @GetMapping(path = "/")
-    public String index() {
-        return "helloworld";
+    @GetMapping(path = "/home")
+    public String home() {
+        return "home";
     }
+
+    @GetMapping(path = "/landingpage")
+    public String landing() {
+        return "landingpage";
+    }
+
+
 
 }
