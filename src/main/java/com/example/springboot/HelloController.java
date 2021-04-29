@@ -18,6 +18,16 @@ public class HelloController {
         return "landingpage";
     }
 
+    @GetMapping(path = "/index")
+    public String index() {
+        return "index";
+    }
+
+    @GetMapping(path = "/homepage")
+    public String homepage() {
+        return "homepage";
+    }
+
 
 
 }
