@@ -28,6 +28,13 @@ public class HelloController {
         return "homepage";
     }
 
+    @GetMapping(path = "/signin")
+    public String signin() {
+        return "signin";
+    }
 
-
+    @GetMapping(path = "/register")
+    public String register() {
+        return "register";
+    }
 }
