@@ -7,16 +7,25 @@ body {
   padding-bottom: 3rem;
   color: #5a5a5a;
 }
-
+/*
 img.down {
   opacity:0.5;
   transition:opacity 1s ease, transform 1s ease;
+  transform: rotateY(360deg);
 }
+
 
 img.down:hover {
   opacity:1;
   transform: rotateY(180deg);
   transition:opacity 1.2s ease, transform 1.2s ease;
+} */
+
+.down { animation: turner 5s infinite linear }
+
+@keyframes turner{
+  from{  transform: rotateY(0deg)   }
+  to  {  transform: rotateY(360deg) }
 }
 
 /* CUSTOMIZE THE CAROUSEL
