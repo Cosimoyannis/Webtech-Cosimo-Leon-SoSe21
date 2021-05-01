@@ -21,7 +21,7 @@ public class HiController {
         return "Hey I know environment variable, " + testEnvValue;
     }
 
-   /* @Autowired
+    @Autowired
     private ProductService productService;
 
     @GetMapping("/products")
@@ -45,7 +45,7 @@ public class HiController {
     return productService.count();
     }
 
-    */
+
 
 }
 
