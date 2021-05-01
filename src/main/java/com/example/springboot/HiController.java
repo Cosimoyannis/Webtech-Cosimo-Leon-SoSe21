@@ -8,7 +8,7 @@ import java.awt.*;
 import java.util.List;
 import java.util.Optional;
 
-/*
+
 @RestController
 public class HiController {
 
@@ -21,7 +21,7 @@ public class HiController {
         return "Hey I know environment variable, " + testEnvValue;
     }
 
-    @Autowired
+   /* @Autowired
     private ProductService productService;
 
     @GetMapping("/products")
@@ -40,8 +40,12 @@ public class HiController {
         productService.deleteById(productId);
     }
 
-    @GetMapping
+    @GetMapping("/products/count")
+    public Long count() {
+    return productService.count();
+    }
+
+    */
 
 }
 
- */
