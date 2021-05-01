@@ -37,4 +37,9 @@ public class HelloController {
     public String register() {
         return "register";
     }
+
+    @GetMapping(path = "/dbtest")
+    public String dbtest() {
+        return "dbtest";
+    }
 }
