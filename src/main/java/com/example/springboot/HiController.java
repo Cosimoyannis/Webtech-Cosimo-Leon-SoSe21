@@ -1,16 +1,45 @@
 package com.example.springboot;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
+import java.util.List;
+import java.util.Optional;
 
 
 @RestController
 public class HiController {
 
-    @RequestMapping(path = "/hi")
+    @Autowired
+    private Environment env;
+
+    @RequestMapping("/")
     public String index() {
-        return "hi";
+        String testEnvValue = Optional.of(env.getProperty("TEST_VALUE")).orElse("Environment variable not found");
+        return "Hey I know environment variable, " + testEnvValue;
     }
+
+    @Autowired
+    private ProductService productService;
+
+    @GetMapping("/products")
+    public List<Product> allProducts() {
+        return productService.findAll();
+    }
+
+    @PostMapping("/products")
+    public Product createProduct(@RequestBody Product product) {
+        return productService.save(product);
+    }
+
+    @DeleteMapping("/products/{id}")
+    public void delete(@PathVariable String id) {
+        Long productId = Long.parseLong(id);
+        productService.deleteById(productId);
+    }
+
+    @GetMapping
 
 }
