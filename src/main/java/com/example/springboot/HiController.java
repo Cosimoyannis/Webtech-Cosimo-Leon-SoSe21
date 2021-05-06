@@ -5,6 +5,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,28 +22,33 @@ public class HiController {
         return "Hey I know environment variable, " + testEnvValue;
     }
 
+
+
     @Autowired
-    private ProductService productService;
+    private ProductRepository productRepository;
 
     @GetMapping("/products")
     public List<Product> allProducts() {
-        return productService.findAll();
+        List<Product> myList = new ArrayList<>();
+        productRepository.findAll().forEach(myList::add);
+        return myList;
     }
+
 
     @PostMapping("/products")
     public Product createProduct(@RequestBody Product product) {
-        return productService.save(product);
+        return productRepository.save(product);
     }
 
     @DeleteMapping("/products/{id}")
     public void delete(@PathVariable String id) {
         Long productId = Long.parseLong(id);
-        productService.deleteById(productId);
+        productRepository.deleteById(productId);
     }
 
     @GetMapping("/products/count")
     public Long count() {
-    return productService.count();
+    return productRepository.count();
     }
 
 
