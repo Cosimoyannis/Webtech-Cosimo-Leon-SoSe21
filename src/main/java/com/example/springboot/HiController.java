@@ -31,7 +31,7 @@ public class HiController {
 
     @RequestMapping (
             method = RequestMethod.GET,
-            path = "/product",
+            path = "/products",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
 
@@ -43,7 +43,6 @@ public class HiController {
 
     }
 
-    /*
 
     @GetMapping("/products")
     public List<Product> allProducts() {
@@ -60,10 +59,12 @@ public class HiController {
 
 
     @DeleteMapping("/products/{id}")
-    public void delete(@PathVariable String id) {
-        Long productId = Long.parseLong(id);
-        productRepository.deleteById(productId);
+    public void delete(@PathVariable int id) {
+
+        productRepository.deleteById(id);
     }
+
+
 
 
     @GetMapping("/products/count")
@@ -72,7 +73,7 @@ public class HiController {
     }
 
 
-     */
+
 
 
 }
