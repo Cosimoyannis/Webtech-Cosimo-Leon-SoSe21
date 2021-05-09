@@ -1,27 +1,30 @@
 package com.example.springboot;
 
 
+import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
+import javax.persistence.Table;
 import javax.annotation.processing.Generated;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
+@Table (name = "product")
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private int price;
 
-    public Product() {}
 
     public Product(String name,int price) {
         this.name = name;
@@ -29,11 +32,18 @@ public class Product {
 
     }
 
-    public Long getId() {
+    public Product() {}
+
+
+    public Product(int id, String name, int price) {
+
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

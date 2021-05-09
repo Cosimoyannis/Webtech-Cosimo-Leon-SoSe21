@@ -2,6 +2,7 @@ package com.example.springboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
@@ -27,6 +28,23 @@ public class HiController {
     @Autowired
     private ProductRepository productRepository;
 
+
+    @RequestMapping (
+            method = RequestMethod.GET,
+            path = "/product",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+
+    public List<Product> getProduct() {
+
+        List<Product> productList = productRepository.findAll();
+
+        return productList;
+
+    }
+
+    /*
+
     @GetMapping("/products")
     public List<Product> allProducts() {
         List<Product> myList = new ArrayList<>();
@@ -40,17 +58,21 @@ public class HiController {
         return productRepository.save(product);
     }
 
+
     @DeleteMapping("/products/{id}")
     public void delete(@PathVariable String id) {
         Long productId = Long.parseLong(id);
         productRepository.deleteById(productId);
     }
 
+
     @GetMapping("/products/count")
     public Long count() {
     return productRepository.count();
     }
 
+
+     */
 
 
 }
