@@ -18,10 +18,12 @@ public class HelloController {
         return "landingpage";
     }
 
-    @GetMapping(path = "/index")
+   /* @GetMapping(path = "/index")
     public String index() {
-        return "index";
+        return "einkaufswagenapp";
     }
+
+    */
 
     @GetMapping(path = "/homepage")
     public String homepage() {
@@ -41,5 +43,10 @@ public class HelloController {
     @GetMapping(path = "/dbtest")
     public String dbtest() {
         return "dbtest";
+    }
+
+    @GetMapping(path = "/index")
+    public String einkaufswagenapp() {
+        return "index";
     }
 }
