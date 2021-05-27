@@ -3,6 +3,8 @@ package com.example.springboot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.parameters.P;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
@@ -43,19 +45,24 @@ public class HiController {
 
     }
 
-
+/*
     @GetMapping("/products")
     public List<Product> allProducts() {
         List<Product> myList = new ArrayList<>();
         productRepository.findAll().forEach(myList::add);
         return myList;
+
     }
+
+ */
 
 
     @PostMapping("/products")
     public Product createProduct(@RequestBody Product product) {
         return productRepository.save(product);
     }
+
+
 
 
     @DeleteMapping("/products/{id}")
@@ -73,6 +80,13 @@ public class HiController {
     }
 
 
+    @GetMapping("/")
+    String getCenters(Model model) {
+
+        model.addAttribute("product", productRepository.findAll());
+
+        return "app";
+    }
 
 
 
