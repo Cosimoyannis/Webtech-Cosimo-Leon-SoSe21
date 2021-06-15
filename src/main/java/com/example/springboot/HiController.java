@@ -79,7 +79,7 @@ public class HiController {
     return productRepository.count();
     }
 
-
+/*
     @GetMapping("/")
     String getCenters(Model model) {
 
@@ -88,6 +88,8 @@ public class HiController {
         return "app";
     }
 
+
+ */
 
 
 }

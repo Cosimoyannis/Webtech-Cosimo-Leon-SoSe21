@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
     <head>
         <meta charset="utf-8">
@@ -48,7 +48,8 @@
 
 
 
-<header>
+
+<!--<header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/app">Meine Einkaufsliste</a>
@@ -67,11 +68,65 @@
             </div>
         </div>
     </nav>
+</header>-->
+
+
+
+<header>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="/app">Meine Einkaufsliste</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="loginLogout" sec:authorize="isAuthenticated()">
+                <form id="logout-form" method="POST" action="#" th:action="@{/logout}" >
+                    <button type="submit" class="login">Logout</button>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/oauth2/authorization/okta}" th:classappend="${#request.requestURI == '/login' ? 'active':''}">Anmelden</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+
+
 </header>
 
 
 
+<!--
 
+<div class="w3-bar w3-border w3-light-grey">
+    <a href="/"><img src="/bilder/Logo.png" width="50" height="50" alt="Selfhtml"></a>
+    <font face="Verdana" size="5" style="color:#43cea2"><b>getVac</b></font>
+
+    <div class="loginLogout" sec:authorize="!isAuthenticated()">
+        <a class="login" th:href="@{/oauth2/authorization/okta}" th:classappend="${#request.requestURI == '/login' ? 'active':''}">Login</a>
+    </div>
+    <div class="loginLogout" sec:authorize="isAuthenticated()">
+        <form id="logout-form" method="POST" action="#" th:action="@{/logout}" >
+            <button type="submit" class="login">Logout</button>
+        </form>
+    </div>
+
+
+</div>
+
+-->
 
 
 <main>
