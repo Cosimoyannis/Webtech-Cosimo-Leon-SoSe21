@@ -25,30 +25,21 @@ public class Product {
     @NotNull
     private int price;
 
-//    @NotNull
-//    private String email;
-
-    @Column(
-            name = "email",
-            columnDefinition = "Text"
-    )
+    @NotNull
     private String email;
 
 
-    public Product(String name, int price, String email) {
+    public Product(int id, String name, int price, String email) {
         this.name = name;
         this.price = price;
         this.email = email;
-
+        this.id = id;
     }
 
     public Product() {
-    }
-
-
-    public Product(int id, String name, int price, String email) {
 
     }
+
 
     public int getId() {
         return id;

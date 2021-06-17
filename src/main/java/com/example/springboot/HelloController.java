@@ -26,4 +26,9 @@ public class HelloController {
     public String app() {
         return "app";
     }
+
+    @GetMapping(path = "/testo")
+    public String testo() {
+        return "testo";
+    }
 }

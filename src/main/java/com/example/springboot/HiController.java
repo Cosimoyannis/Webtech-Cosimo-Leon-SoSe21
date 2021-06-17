@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.parameters.P;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,11 +34,27 @@ public class HiController {
     private ProductRepository productRepository;
 
 
-    @RequestMapping (
+    /*@RequestMapping (
             method = RequestMethod.GET,
             path = "/products",
             produces = MediaType.APPLICATION_JSON_VALUE
-    )
+    )*/
+
+
+
+    @RequestMapping(value = "/products")
+            public String getAllProducts(Model model)
+    {
+        List<Product> products = productRepository.findAll();
+
+        model.addAttribute("products", products);
+
+        return "products";
+
+    }
+
+
+
 
     public List<Product> getProduct() {
 
