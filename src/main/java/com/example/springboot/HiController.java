@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.parameters.P;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
+import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +21,7 @@ public class HiController {
     @Autowired
     private Environment env;
 
-    @RequestMapping("/")
+    @RequestMapping("/testit")
     public String index() {
         String testEnvValue = Optional.of(env.getProperty("TEST_VALUE")).orElse("Environment variable not found");
         return "Hey I know environment variable, " + testEnvValue;
@@ -45,7 +47,7 @@ public class HiController {
 
     }
 
-/*
+
     @GetMapping("/products")
     public List<Product> allProducts() {
         List<Product> myList = new ArrayList<>();
@@ -54,14 +56,12 @@ public class HiController {
 
     }
 
- */
 
 
-    @PostMapping("/products")
+   @PostMapping("/products")
     public Product createProduct(@RequestBody Product product) {
         return productRepository.save(product);
     }
-
 
 
 
@@ -72,24 +72,12 @@ public class HiController {
     }
 
 
-
-
     @GetMapping("/products/count")
     public Long count() {
     return productRepository.count();
     }
 
-/*
-    @GetMapping("/")
-    String getCenters(Model model) {
 
-        model.addAttribute("product", productRepository.findAll());
-
-        return "app";
-    }
-
-
- */
 
 
 }

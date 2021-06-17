@@ -25,17 +25,28 @@ public class Product {
     @NotNull
     private int price;
 
+//    @NotNull
+//    private String email;
 
-    public Product(String name,int price) {
+    @Column(
+            name = "email",
+            columnDefinition = "Text"
+    )
+    private String email;
+
+
+    public Product(String name, int price, String email) {
         this.name = name;
         this.price = price;
+        this.email = email;
 
     }
 
-    public Product() {}
+    public Product() {
+    }
 
 
-    public Product(int id, String name, int price) {
+    public Product(int id, String name, int price, String email) {
 
     }
 
@@ -62,4 +73,13 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }

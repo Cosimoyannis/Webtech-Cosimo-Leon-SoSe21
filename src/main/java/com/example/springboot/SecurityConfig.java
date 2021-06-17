@@ -30,7 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
                         HttpMethod.GET,
-                        Endpoints.HOMEPAGE
+                        Endpoints.HOMEPAGE,
+                        Endpoints.PRODUCTS
 
                 ).permitAll()
                 .antMatchers(
