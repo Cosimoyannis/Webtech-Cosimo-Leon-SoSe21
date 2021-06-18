@@ -25,14 +25,10 @@ public class Product {
     @NotNull
     private int price;
 
-    @NotNull
-    private String email;
 
-
-    public Product(int id, String name, int price, String email) {
+    public Product(int id, String name, int price) {
         this.name = name;
         this.price = price;
-        this.email = email;
         this.id = id;
     }
 
@@ -65,12 +61,5 @@ public class Product {
         this.price = price;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
 }

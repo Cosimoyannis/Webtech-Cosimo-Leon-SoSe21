@@ -65,6 +65,8 @@ public class HiController {
     }
 
 
+
+
     @GetMapping("/products")
     public List<Product> allProducts() {
         List<Product> myList = new ArrayList<>();
@@ -75,7 +77,7 @@ public class HiController {
 
 
 
-   @PostMapping("/products")
+    @PostMapping("/products")
     public Product createProduct(@RequestBody Product product) {
         return productRepository.save(product);
     }
