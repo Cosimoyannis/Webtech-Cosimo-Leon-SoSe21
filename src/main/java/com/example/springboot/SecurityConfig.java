@@ -29,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers(
+
                         HttpMethod.GET,
                         Endpoints.HOMEPAGE,
                         Endpoints.PRODUCTS
@@ -49,4 +50,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .oauth2Login();
 
     }
+
+
 }

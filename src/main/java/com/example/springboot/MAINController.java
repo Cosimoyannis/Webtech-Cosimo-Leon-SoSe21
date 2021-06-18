@@ -9,60 +9,27 @@ import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.print.attribute.standard.JobKOctets;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Optional;
 
 
-@RestController
-public class HiController {
-
-    @Autowired
-    private Environment env;
-
-    @RequestMapping("/testit")
-    public String index() {
-        String testEnvValue = Optional.of(env.getProperty("TEST_VALUE")).orElse("Environment variable not found");
-        return "Hey I know environment variable, " + testEnvValue;
-    }
-
+@Controller
+public class MAINController {
 
 
     @Autowired
     private ProductRepository productRepository;
 
 
-    /*@RequestMapping (
+    @RequestMapping (
             method = RequestMethod.GET,
             path = "/products",
             produces = MediaType.APPLICATION_JSON_VALUE
-    )*/
-
-
-
-    @RequestMapping(value = "/products")
-            public String getAllProducts(Model model)
-    {
-        List<Product> products = productRepository.findAll();
-
-        model.addAttribute("products", products);
-
-        return "products";
-
-    }
-
-
-
-
-    public List<Product> getProduct() {
-
-        List<Product> productList = productRepository.findAll();
-
-        return productList;
-
-    }
+    )
 
 
 
@@ -74,7 +41,6 @@ public class HiController {
         return myList;
 
     }
-
 
 
     @PostMapping("/products")
