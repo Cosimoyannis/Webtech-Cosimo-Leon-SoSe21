@@ -25,13 +25,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
+/*
+
     public List<Product> findAll() {
         List<Product> productList = productRepository.findAll();
         return productList;
     }
 
 
-    /*
+
     public List<Product> findAll2() {
         List<Product> myList = new ArrayList<>();
         productRepository.findAll().forEach(myList::add);

@@ -1,3 +1,4 @@
+/*
 package com.example.springboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import java.util.List;
 public class PRODUCTController {
 
 
+*/
 /*
     @Autowired
     private ProductRepository productRepository;
@@ -40,19 +42,23 @@ public class PRODUCTController {
         Map<String, Object> viewModel = new HashMap<>();
         viewModel.put("products", products);
         return new ModelAndView(ViewNames.DAS, viewModel);
-    }*/
+    }*//*
 
 
 
-   /* @GetMapping(Endpoints.DAS)
+
+   */
+/* @GetMapping(Endpoints.DAS)
     public ModelAndView showForm(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
         return new ModelAndView(ViewNames.DAS);
-    }*/
+    }*//*
 
 
-    /*@RequestMapping(value = "/products")
+
+    */
+/*@RequestMapping(value = "/products")
             public String getAllProducts(Model model)
     {
         List<Product> products = productRepository.findAll();
@@ -61,11 +67,13 @@ public class PRODUCTController {
 
         return "products";
 
-    }*/
+    }*//*
+
 
 
 
 
 
 }
+*/
 

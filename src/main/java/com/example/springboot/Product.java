@@ -2,6 +2,7 @@ package com.example.springboot;
 
 
 import com.sun.istack.NotNull;
+import com.sun.istack.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,11 +20,14 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
+    @Nullable
     private String name;
 
-    @NotNull
+    @Nullable
     private int price;
+
+
+
 
 
     public Product(int id, String name, int price) {
@@ -60,6 +64,8 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
+
+
 
 
 }

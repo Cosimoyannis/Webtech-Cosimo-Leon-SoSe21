@@ -24,6 +24,8 @@ public class HTMLController {
         return "app";
     }
 
+    /*
+
     @GetMapping(path = Endpoints.PRODUCTS)
     String products(Model model) {
 
@@ -31,6 +33,8 @@ public class HTMLController {
 
         return "products";
     }
+    
+     */
 
 
 }

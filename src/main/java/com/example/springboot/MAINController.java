@@ -10,19 +10,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import javax.print.attribute.standard.JobKOctets;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
 
 
-@Controller
+@RestController
 public class MAINController {
 
 
     @Autowired
     private ProductRepository productRepository;
+    private ProductService productService;
 
 
     @RequestMapping (
@@ -33,7 +37,7 @@ public class MAINController {
 
 
 
-
+/*
     @GetMapping("/products")
     public List<Product> allProducts() {
         List<Product> myList = new ArrayList<>();
@@ -41,6 +45,17 @@ public class MAINController {
         return myList;
 
     }
+
+ */
+
+
+
+    @GetMapping("/products")
+    public List<Product> allProducts() {
+        return productRepository.findAll();
+    }
+
+
 
 
     @PostMapping("/products")
