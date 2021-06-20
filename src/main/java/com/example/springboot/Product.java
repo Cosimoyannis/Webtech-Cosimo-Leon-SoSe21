@@ -16,6 +16,7 @@ import javax.persistence.*;
 @Table (name = "product")
 public class Product {
 
+    @Nullable
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -26,14 +27,18 @@ public class Product {
     @Nullable
     private int price;
 
+    @Nullable
+    private String owner;
 
 
 
 
-    public Product(int id, String name, int price) {
+
+    public Product(int id, String name, int price, String owner) {
         this.name = name;
         this.price = price;
         this.id = id;
+        this.owner = owner;
     }
 
     public Product() {
@@ -65,6 +70,13 @@ public class Product {
         this.price = price;
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
 
 
 

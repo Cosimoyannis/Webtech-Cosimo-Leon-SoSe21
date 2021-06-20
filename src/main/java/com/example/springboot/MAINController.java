@@ -20,13 +20,17 @@ import java.util.*;
 import java.util.List;
 
 
-@RestController
+@Controller
 public class MAINController {
 
 
     @Autowired
     private ProductRepository productRepository;
+    @Autowired
     private ProductService productService;
+    @Autowired
+    private ProductServiceImpl productServiceImpl;
+
 
 
     @RequestMapping (
@@ -56,26 +60,59 @@ public class MAINController {
     }
 
 
+    @GetMapping("/listproducts")
+    public String productsTable(@AuthenticationPrincipal OidcUser user, Model model) {
+        List<Product> products = productServiceImpl.findAll(user.getEmail());
+        model.addAttribute("products", products);
+        return "productstable";
+    }
+
+    @GetMapping("/createproduct")
+    public String productForm(Model model) {
+        model.addAttribute("product", new Product());
+        return "productcreation";
+    }
+
+    @GetMapping("/products/count")
+    public Long count() {
+        return productRepository.count();
+    }
+
+
+
+
+
 
 
     @PostMapping("/products")
     public Product createProduct(@RequestBody Product product) {
-        return productRepository.save(product);
+        return productServiceImpl.save(product);
     }
+
+
+    @PostMapping("/createproduct")
+    public String productSubmit(@AuthenticationPrincipal OidcUser user, @ModelAttribute Product product, Model model) {
+        product.setOwner(user.getEmail());
+        productServiceImpl.save(product);
+        model.addAttribute("product", product);
+        return "productresult";
+    }
+
+
+
+
+
 
 
 
     @DeleteMapping("/products/{id}")
     public void delete(@PathVariable int id) {
 
-        productRepository.deleteById(id);
+        productServiceImpl.deleteById(id);
     }
 
 
-    @GetMapping("/products/count")
-    public Long count() {
-    return productRepository.count();
-    }
+
 
 
 

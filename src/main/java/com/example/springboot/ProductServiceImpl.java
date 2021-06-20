@@ -25,6 +25,36 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
+
+    public List<Product> findAll(String userEmail) {
+
+        var iterator = productRepository.findAll();
+
+        var products = new ArrayList<Product>();
+        for (Product p : iterator) {
+            if (p.getOwner() != null && p.getOwner().equals(userEmail)) products.add(p);
+        }
+
+        return products;
+    }
+
+
+    public Long count() {
+
+        return productRepository.count();
+    }
+
+    public void deleteById(int id) {
+
+        productRepository.deleteById(id);
+    }
+
+    public Product save(Product product) {
+        return productRepository.save(product);
+    }
+
+
+
 /*
 
     public List<Product> findAll() {
