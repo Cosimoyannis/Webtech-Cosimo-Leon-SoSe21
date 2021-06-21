@@ -6,6 +6,8 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
+  background-image:url("bilder/notebook.jpg");
+  background-image: ;
 }
 /*
 img.down {
@@ -109,4 +111,20 @@ img.down:hover {
   .featurette-heading {
     margin-top: 7rem;
   }
+}
+
+
+
+.background1 {
+  vertical-align:middle;
+  position:absolute;
+  text-align:center;
+  background-image:url("bilder/notebook.jpg");
+  background-repeat:no-repeat;
+  position: absolute;
+  top:0pt;
+  right:0pt;
+  left:0pt;
+  bottom:0pt;
+
 }

@@ -73,15 +73,11 @@ public class MAINController {
         return "productcreation";
     }
 
+
     @GetMapping("/products/count")
     public Long count() {
         return productRepository.count();
     }
-
-
-
-
-
 
 
     @PostMapping("/products")
@@ -97,12 +93,6 @@ public class MAINController {
         model.addAttribute("product", product);
         return "productresult";
     }
-
-
-
-
-
-
 
 
     @DeleteMapping("/products/{id}")
