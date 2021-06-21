@@ -23,8 +23,11 @@ public class HTMLController {
     }
 
     @GetMapping(path = Endpoints.APP)
-    public String app() {
-        return "app";
+    public String app() { return "allProducts"; }
+
+    @GetMapping(path = Endpoints.BUTTON)
+    public String button() {
+        return "button";
     }
 
     @GetMapping(path = Endpoints.PRODUCTS)

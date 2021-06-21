@@ -8,6 +8,7 @@ public class Endpoints {
     public static final String PRODUCTS = "/products";
     public static final String CREATEPRODUCT = "/createproduct";
     public static final String LISTPRODUCTS = "/listproducts";
+    public static final String BUTTON = "/button";
 
 
 
