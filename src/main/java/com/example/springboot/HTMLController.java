@@ -15,15 +15,7 @@ public class HTMLController {
 
     @Autowired
     private ProductServiceImpl productServiceImpl;
-
-
-    @GetMapping(path = Endpoints.HOMEPAGE)
-    public String homepage() {
-        return "homepage";
-    }
-
-    @GetMapping(path = Endpoints.APP)
-    public String app() { return "allProducts"; }
+    
 
     @GetMapping(path = Endpoints.BUTTON)
     public String button() {
