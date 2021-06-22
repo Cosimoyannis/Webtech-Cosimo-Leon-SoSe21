@@ -15,7 +15,7 @@ public class HTMLController {
 
     @Autowired
     private ProductServiceImpl productServiceImpl;
-    
+
 
     @GetMapping(path = Endpoints.BUTTON)
     public String button() {
