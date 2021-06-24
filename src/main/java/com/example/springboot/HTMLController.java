@@ -16,6 +16,7 @@ public class HTMLController {
     @Autowired
     private ProductServiceImpl productServiceImpl;
 
+
     @GetMapping(path = Endpoints.HOMEPAGE)
     public String homepage() {
         return "homepage";
