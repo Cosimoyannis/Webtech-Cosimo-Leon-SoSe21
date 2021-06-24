@@ -214,6 +214,7 @@
       <tr>
         <th>Name</th>
         <th>Preis in €</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -223,6 +224,11 @@
       <tr th:each="product : ${products}">
         <td><span th:text="${product.name}">Name</span></td>
         <td><span th:text="${product.price}">Preis</span></td>
+        <td>
+          <form sction="/listproducts" th:action="@{/products/{id}(id = ${product.id})}" th:object="${product}" method="post">
+            <button type="submit">x</button>
+          </form>
+        </td>
       </tr>
       </tbody>
     </table>

@@ -1,22 +1,17 @@
 package com.example.springboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
-import org.springframework.security.core.parameters.P;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import javax.print.attribute.standard.JobKOctets;
-import java.awt.*;
-import java.util.*;
+import org.springframework.web.servlet.view.RedirectView;
+
 import java.util.List;
 
 
@@ -95,10 +90,10 @@ public class MAINController {
     }
 
 
-    @DeleteMapping("/products/{id}")
-    public void delete(@PathVariable int id) {
-
+    @PostMapping("/products/{id}")
+    public RedirectView delete(@PathVariable int id) {
         productServiceImpl.deleteById(id);
+        return new RedirectView("/listproducts");
     }
 
 
