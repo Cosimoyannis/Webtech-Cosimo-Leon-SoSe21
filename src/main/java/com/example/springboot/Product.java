@@ -30,13 +30,17 @@ public class Product {
     @Nullable
     private String owner;
 
+ //   @Nullable
+   // private long number;
 
 
 
 
-    public Product(int id, String name, double price, String owner) {
+
+    public Product(int id, String name, double price, String owner, long number) {
         this.name = name;
         this.price = price;
+        //this.number = number;
         this.id = id;
         this.owner = owner;
     }
@@ -78,6 +82,16 @@ public class Product {
         this.owner = owner;
     }
 
+    /*
+    public long getNumber() {
+        return number;
+    }
 
+    public void setNumber(long number) {
+        this.number = number;
+    }
+
+
+     */
 
 }
