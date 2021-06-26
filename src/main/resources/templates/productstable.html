@@ -212,8 +212,10 @@
     <table>
       <thead>
       <tr>
+        <th></th>
+        <th>Anzahl</th>
         <th>Name</th>
-        <th>Preis in €</th>
+        <th>Preis</th>
         <th></th>
       </tr>
       </thead>
@@ -224,9 +226,26 @@
 
       <tr th:each="product : ${products}">
 
+        <div id="app">
+
+        <td>
+            <button @click="counter++" class="btn btn-outline-success" style="width: 40px; height:40px;">+</button>
+            <button @click="counter--" class="btn btn-outline-danger" style="width: 40px; height:40px;">-</button>
+        </td>
+
+
+
+        <td>
+          {{ counter }}
+        </td>
+
+        </div>
+
         <td><span th:text="${product.name}">Name</span></td>
 
+
         <td><span th:text="${product.price}">Preis</span></td>
+
 
         <td>
           <form sction="/listproducts" th:action="@{/products/{id}(id = ${product.id})}" th:object="${product}" method="post">
@@ -237,9 +256,8 @@
           </form>
         </td>
 
+
         <td>
-
-
         </td>
 
       </tr>
