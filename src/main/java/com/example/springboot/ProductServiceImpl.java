@@ -53,6 +53,11 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.save(product);
     }
 
+    public void updateCount(int id, int count) {
+        Product product = productRepository.getOne(id);
+        product.setCount(count);
+        productRepository.save(product);
+    }
 
 
 /*

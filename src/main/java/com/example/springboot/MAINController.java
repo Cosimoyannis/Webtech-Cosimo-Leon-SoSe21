@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.persistence.PostUpdate;
 import java.util.List;
 
 
@@ -80,7 +81,6 @@ public class MAINController {
         return productServiceImpl.save(product);
     }
 
-
     @PostMapping("/createproduct")
     public String productSubmit(@AuthenticationPrincipal OidcUser user, @ModelAttribute Product product, Model model) {
         product.setOwner(user.getEmail());
@@ -89,18 +89,10 @@ public class MAINController {
         return "productresult";
     }
 
-
     @PostMapping("/products/{id}")
     public RedirectView delete(@PathVariable int id) {
         productServiceImpl.deleteById(id);
         return new RedirectView("/listproducts");
     }
-
-
-
-
-
-
-
 }
 

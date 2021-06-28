@@ -30,6 +30,9 @@ public class Product {
     @Nullable
     private String owner;
 
+    @Nullable
+    private int count;
+
   /*  @Nullable
     private double number;*/
 
@@ -37,12 +40,13 @@ public class Product {
 
 
 
-    public Product(int id, String name, double price, String owner, double number) {
+    public Product(int id, String name, double price, String owner, int count) {
         this.name = name;
         this.price = price;
 //        this.number = number;
         this.id = id;
         this.owner = owner;
+        this.count = count;
     }
 
     public Product() {
@@ -80,6 +84,12 @@ public class Product {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public int getCount() {return this.count;}
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
    /* public double getNumber() {

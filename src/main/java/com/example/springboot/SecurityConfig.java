@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .oauth2Client()
                 .and()
                 .oauth2Login();
-
+        http.cors().and().csrf().disable();
     }
 
 
