@@ -242,13 +242,9 @@
           {{product.count}}
         </td>
 
-
-
         <td>{{product.name}}</td>
 
-
         <td>{{mapPrice(product.price)}}</td>
-
 
         <td>
           <form sction="/listproducts" :action="'/products/' + product.id" method="post">
@@ -259,13 +255,20 @@
           </form>
         </td>
 
-
         <td>
         </td>
 
       </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>Gesamtpreis</th>
+        <th>{{mapPrice(gesamtPreis)}}</th>
+        <th></th>
+      </tr>
       </tbody>
     </table>
+
     </div>
   </center>
 
@@ -303,7 +306,15 @@
       mapPrice(price) {
         return (price.toFixed(2)).replaceAll('.', ',') + '€';
       }
-    }
+    },
+     computed: {
+      gesamtPreis() {
+        return this.products.reduce((acc, val) => {
+          acc += val.price * val.count;
+          return acc;
+        }, 0);
+      }
+     }
   })
 </script>
 
