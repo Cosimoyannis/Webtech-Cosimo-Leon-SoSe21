@@ -247,7 +247,7 @@
         <td>{{product.name}}</td>
 
 
-        <td>{{product.price}}</td>
+        <td>{{mapPrice(product.price)}}</td>
 
 
         <td>
@@ -299,6 +299,9 @@
         fetch(`/products/${this.products[i].id}/count/${this.products[i].count}`, {
           method: 'PATCH'
         });
+      },
+      mapPrice(price) {
+        return (price.toFixed(2)).replaceAll('.', ',') + '€';
       }
     }
   })

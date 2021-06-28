@@ -84,6 +84,7 @@ public class MAINController {
     @PostMapping("/createproduct")
     public String productSubmit(@AuthenticationPrincipal OidcUser user, @ModelAttribute Product product, Model model) {
         product.setOwner(user.getEmail());
+        product.setCount(1);
         productServiceImpl.save(product);
         model.addAttribute("product", product);
         return "productresult";

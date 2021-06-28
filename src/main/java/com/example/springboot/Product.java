@@ -46,7 +46,7 @@ public class Product {
 //        this.number = number;
         this.id = id;
         this.owner = owner;
-        this.count = count;
+        this.count = 1;
     }
 
     public Product() {
